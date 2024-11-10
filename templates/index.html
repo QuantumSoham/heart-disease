@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Heart Disease Prediction</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* Background and layout */
+        body {
+            background: url('https://www.transparenttextures.com/patterns/dark-fish-skin.png'), linear-gradient(135deg, #2b5876, #4e4376);
+            font-family: Arial, sans-serif;
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            overflow: hidden;
+        }
+
+        /* Container */
+        .container {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 40px;
+            width: 90%;
+            max-width: 600px;
+            box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.4);
+        }
+
+        /* Heading section */
+        .header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #ff416c;
+            text-shadow: 2px 2px 10px rgba(255, 65, 108, 0.7);
+            letter-spacing: 1px;
+        }
+
+        .header p {
+            font-size: 1.1rem;
+            color: #ddd;
+        }
+
+        /* Input field styling */
+        .form-control {
+            background-color: rgba(255, 255, 255, 0.85);
+            border: none;
+            color: #333;
+            border-radius: 8px;
+            padding: 15px;
+            font-size: 16px;
+            margin-bottom: 15px;
+            transition: all 0.3s ease;
+        }
+
+        .form-control:focus {
+            box-shadow: 0px 0px 10px rgba(0, 150, 136, 0.5);
+            border: 1px solid #00aaff;
+        }
+
+        /* Button styling */
+        .btn-custom {
+            background: linear-gradient(135deg, #ff416c, #ff4b2b);
+            color: #fff;
+            font-size: 18px;
+            font-weight: bold;
+            padding: 12px 20px;
+            border-radius: 30px;
+            width: 100%;
+            transition: all 0.3s ease;
+            box-shadow: 0px 4px 10px rgba(255, 75, 43, 0.3);
+        }
+
+        .btn-custom:hover {
+            background: linear-gradient(135deg, #ff4b2b, #ff416c);
+            box-shadow: 0px 6px 12px rgba(255, 75, 43, 0.5);
+        }
+
+        /* Card styling */
+        .card {
+            background-color: transparent;
+            border: none;
+        }
+
+        /* Enhance form sections */
+        .form-section {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Heart Disease Prediction</h1>
+            <p>Provide the patient's details below to predict the likelihood of heart disease.</p>
+        </div>
+        <div class="card">
+            <div class="card-body">
+                <form action="/predict" method="POST">
+                    <div class="form-group">
+                        <input type="number" class="form-control" name="age" placeholder="Age" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="number" class="form-control" name="sex" placeholder="Sex (0 = Female, 1 = Male)" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="number" class="form-control" name="cp" placeholder="Chest Pain Type (0-3)" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="number" class="form-control" name="trestbps" placeholder="Resting Blood Pressure" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="number" class="form-control" name="chol" placeholder="Cholesterol" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="number" class="form-control" name="fbs" placeholder="Fasting Blood Sugar (1 = True, 0 = False)" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="number" class="form-control" name="restecg" placeholder="Resting ECG (0-2)" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="number" class="form-control" name="thalach" placeholder="Max Heart Rate Achieved" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="number" class="form-control" name="exang" placeholder="Exercise Induced Angina (1 = Yes, 0 = No)" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="number" class="form-control" name="oldpeak" placeholder="ST Depression" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="number" class="form-control" name="slope" placeholder="Slope of ST Segment (0-2)" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="number" class="form-control" name="ca" placeholder="Number of Major Vessels (0-3)" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="number" class="form-control" name="thal" placeholder="Thalassemia (1-3)" required>
+                    </div>
+                    <button type="submit" class="btn btn-custom">Predict</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
